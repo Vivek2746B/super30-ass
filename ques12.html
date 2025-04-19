@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile-First Product Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Mobile-First Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f7;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-content {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: #86868b;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        
+        .product-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+        }
+        
+        .product-description {
+            color: #86868b;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .product-price {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        
+        .add-to-cart {
+            background: #0071e3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .add-to-cart:hover {
+            background: #0077ed;
+        }
+        
+        /* Desktop Enhancements */
+        @media (min-width: 768px) {
+            .product-card {
+                display: flex;
+                max-width: 800px;
+                height: 350px;
+            }
+            
+            .product-image {
+                width: 50%;
+                height: auto;
+            }
+            
+            .product-content {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 30px;
+            }
+            
+            .product-title {
+                font-size: 24px;
+            }
+        }
+        
+        /* Animation on hover */
+        @media (hover: hover) {
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <img src="data:image/jpeg;base64,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" alt="Product Image" class="Headphone">
+        <div class="product-content">
+            <span class="product-category">Sony</span>
+            <h2 class="product-title">Premium Wireless Headphones</h2>
+            <p class="product-description">
+                Experience crystal-clear sound with our noise-cancelling wireless headphones. 
+                Perfect for music lovers and professionals alike.
+            </p>
+            <div class="product-footer">
+                <span class="product-price">$199.99</span>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

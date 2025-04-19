@@ -1,0 +1,96 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.schedule-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto; /* For horizontal scrolling on small screens */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.schedule-table th, 
+.schedule-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.schedule-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #e8f4fc;
+}
+
+.schedule-table tfoot td {
+    background-color: #f1f1f1;
+    font-size: 0.9em;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Special cell styling */
+.break {
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+}
+
+/* Highlight merged cells */
+.schedule-table td[rowspan],
+.schedule-table td[colspan] {
+    background-color: #ecf0f1;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .schedule-table {
+        font-size: 0.9em;
+    }
+    
+    .schedule-table th, 
+    .schedule-table td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-table {
+        font-size: 0.8em;
+    }
+}

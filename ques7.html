@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Energy ⚡</title>
+  <style>
+    body {
+      background: #0f0f0f;
+      color: #e0e0e0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00d8ff;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .plans {
+      margin-top: 1rem;
+    }
+
+    .plans label {
+      display: inline-block;
+      margin-right: 1rem;
+      font-weight: normal;
+    }
+
+    input[type="submit"] {
+      background: transparent;
+      color: #00d8ff;
+      border: 1px solid #00d8ff;
+      padding: 10px;
+      border-radius: 25px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1.5rem;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background: #00d8ff;
+      color: #0f0f0f;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h2>Form Energy ⚡</h2>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required />
+
+    <div class="plans">
+      <label><input type="radio" name="plan" value="basic" required /> Basic</label>
+      <label><input type="radio" name="plan" value="pro" /> Pro</label>
+      <label><input type="radio" name="plan" value="elite" /> Elite</label>
+    </div>
+
+    <input type="submit" value="Sign Up" />
+  </form>
+</body>
+</html>

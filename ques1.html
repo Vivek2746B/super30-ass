@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dark Mode Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #0f0f0f;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    h1 {
+      color: #00d8ff;
+      margin-bottom: 1rem;
+    }
+    .box {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    button {
+      background: transparent;
+      color: #00d8ff;
+      border: 1px solid #00d8ff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background: #00d8ff;
+      color: #0f0f0f;
+    }
+    .msg {
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Welcome</h1>
+    <p>Simple dark mode layout.</p>
+    <button onclick="showMsg()">Explore</button>
+    <div class="msg" id="msg">You found the message!</div>
+  </div>
+
+  <script>
+    function showMsg() {
+      const msg = document.getElementById('msg');
+      msg.style.display = 'block';
+      setTimeout(() => msg.style.display = 'none', 3000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <style>
+        /* Page Layout */
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Form Styling */
+        form {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        /* Validation Styling */
+        input:invalid {
+            border-color: #ff6b6b;
+        }
+
+        input:valid {
+            border-color: #51cf66;
+        }
+
+        .error {
+            color: #ff6b6b;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        input:invalid + .error {
+            display: block;
+        }
+
+        button {
+            background: #339af0;
+            color: white;
+            border: none;
+            padding: 0.7rem;
+            width: 100%;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            background: #228be6;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <form novalidate>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required minlength="3" />
+            <div class="error">Name must be at least 3 characters long</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required />
+            <div class="error">Enter a valid email address</div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input 
+                type="password" 
+                id="password" 
+                required 
+                minlength="8" 
+                pattern="^(?=.*[A-Z])(?=.*\d).+$" 
+            />
+            <div class="error">Must be 8+ characters with at least 1 uppercase letter and 1 number</div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Prevent form submission if invalid
+        document.querySelector('form').addEventListener('submit', function(e) {
+            if (!e.target.checkValidity()) {
+                e.preventDefault();
+                document.querySelectorAll('.error').forEach(el => el.style.display = 'block');
+            }
+        });
+    </script>
+</body>
+</html>

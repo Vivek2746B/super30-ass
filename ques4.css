@@ -1,0 +1,88 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.box-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.box-model-example {
+    width: 300px;
+    height: 200px;
+    padding: 20px;
+    border: 10px solid #3498db;
+    margin: 30px auto;
+    background-color: #f1c40f;
+    position: relative;
+}
+
+.content-area {
+    width: 100%;
+    height: 100%;
+    background-color: #e74c3c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Labels for box model parts */
+.box-model-example::before {
+    content: "Margin";
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #7f8c8d;
+}
+
+.box-model-example::after {
+    content: "Border";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px dashed #7f8c8d;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: #7f8c8d;
+}
+
+.box-model-code {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 40px;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box-model-code code {
+    font-family: 'Courier New', monospace;
+    color: #2c3e50;
+}
